@@ -1,0 +1,146 @@
+@import "src/App";
+
+.form {
+  display: flex;
+  padding: 10px;
+  margin: 50px auto 0;
+  border: 2px solid;
+  background-color: $light;
+  flex-direction: column;
+  border-radius: 7px;
+  @media (min-width: $mobileDevice) {
+    max-width: $mobileDevice;
+  }
+  @media (min-width: $tabletDevice) {
+    max-width: $tabletDevice;
+  }
+}
+
+.form__header {
+  font-size: 20px;
+  display: block;
+  position: relative;
+  margin: 0 auto 20px;
+  text-align: center;
+  @media (min-width: $tabletDevice) {
+    font-size: 23.5px;
+  }
+}
+
+.form__header:before {
+  content: '';
+  background: url('./../img/advanceLogo.svg') no-repeat;
+  display: flex;
+  max-width: 140px;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.form__form-fields {
+  display: grid;
+  grid-gap: 10px;
+  @media (min-width: $mobileDevice) {
+    max-width: $mobileDevice;
+  }
+  @media (min-width: $tabletDevice) {
+    max-width: $tabletDevice;
+  }
+}
+
+.form__form-field {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  margin: 0 auto;
+  @media (min-width: $mobileDevice) {
+    grid-template-columns: 1fr minmax(0, 50%) 1fr 1fr;
+    max-width: $mobileDevice;
+  }
+  @media (min-width: $tabletDevice) {
+    grid-template-columns: 1fr 50% 1fr 1fr;
+  }
+}
+
+.form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: $light;
+  border: 1px solid $black;
+  border-radius: 7px;
+  @media (min-width: $mobileDevice) {
+    min-height: 27px;
+  }
+
+  &:hover {
+    border: none;
+  }
+}
+
+.form__button:nth-of-type(1) {
+  &:hover {
+    background-color: $green;
+  }
+}
+
+.form__button:nth-of-type(2) {
+  &:hover {
+    background-color: $red;
+  }
+}
+
+.form__button-submit {
+  min-width: 120px;
+  margin: 0 auto;
+  background-color: $purple;
+  border: none;
+  font-weight: 600;
+  @media (min-width: $tabletDevice) {
+    min-width: 140px;
+    min-height: 35px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: $black;
+  }
+}
+
+.form__select {
+  font-size: 12px;
+  cursor: pointer;
+  min-height: 27px;
+  border-radius: 7px;
+  @-moz-document url-prefix() {
+    border: 1px solid $light;
+    border-radius: 3px;
+    -moz-appearance: none;
+    background: #f8f9fa url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat center right;
+  }
+}
+
+.form__input {
+  font-size: 10px;
+  line-height: 1.33;
+  min-height: 27px;
+  padding: 0 0 0 5px;
+}
+
+.form__input:focus-visible {
+  outline: 2px solid $blue;
+}
+
+.form__form-field:nth-child(3) .form__button-add {
+  display: none;
+}
+
+.form__data-sent {
+  text-align: center;
+}
+
+.form__data-sent-header {
+  color: $red;
+  margin: 0 0 10px 0;
+}
